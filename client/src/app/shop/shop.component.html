@@ -1,0 +1,21 @@
+<ul>
+  <p>Shop component</p>
+  <li class="list-unstyled" *ngFor="let item of products">
+    <app-product-item [product]="item"></app-product-item>
+  </li>
+
+  <ul>
+    <li class="list-group-item"
+    *ngFor="let brand of brands"
+    [class.active]="brand.id === this.brandIdSelected"
+    [value]="brand.id"
+    (click)='onBrandSelected(brand.id)'
+    >Brands {{brand.name}}</li>
+  </ul>
+
+  <ul>
+    <li class="list-group-item" *ngFor="let type of types">Type {{type.name}}</li>
+  </ul>
+
+
+</ul>
